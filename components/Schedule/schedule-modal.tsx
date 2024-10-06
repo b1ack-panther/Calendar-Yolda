@@ -83,8 +83,8 @@ const ScheduleModal = () => {
 
 	async function onSubmit(values: scheduleFormData) {
 		setMessage(undefined);
-		if (data?.id) handleUpdate(values);
-		else handleCreate(values);
+		if (data?.id) await handleUpdate(values);
+		else await handleCreate(values);
 	}
 
 	return (

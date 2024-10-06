@@ -30,7 +30,7 @@ const Schedule = () => {
 		<>
 			<div className="col-span-12 xl:col-span-5">
 				<div className="flex items-center justify-between my-5">
-					<h1 className="font-manrope text-3xl font-semibold leading-tight text-foreground">
+					<h1 className="font-manrope text-3xl pl-1 font-semibold leading-tight text-foreground">
 						Schedule
 					</h1>
 
@@ -40,7 +40,7 @@ const Schedule = () => {
 					</Button>
 				</div>
 
-				<div className="flex gap-5 flex-col xl:overflow-y-auto xl:pr-3 xl:max-h-[550px]">
+				<div className="flex gap-5 flex-col xl:overflow-y-auto xl:pr-3 p-2 xl:max-h-[550px]">
 					{filteredSchedule.length > 0 ? (
 						filteredSchedule.map((schedule) => (
 							<ScheduleCard key={schedule.id} schedule={schedule} />

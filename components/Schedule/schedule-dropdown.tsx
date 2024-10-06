@@ -14,7 +14,7 @@ import { useModal, useStore } from "@/lib/zustand";
 
 const ScheduleDropdown = ({ schedule }: { schedule: Schedule }) => {
 	const { deleteSchedule: deleteZSchedule } = useStore();
-	const { setModal } = useModal()
+	const { setModal } = useModal();
 
 	const handleDelete = async () => {
 		const res = await deleteSchedule(schedule.id);
@@ -26,8 +26,8 @@ const ScheduleDropdown = ({ schedule }: { schedule: Schedule }) => {
 	};
 
 	const handleEdit = async () => {
-		setModal(schedule)
-	}
+		setModal(schedule);
+	};
 
 	return (
 		<DropdownMenu modal>
@@ -38,7 +38,7 @@ const ScheduleDropdown = ({ schedule }: { schedule: Schedule }) => {
 				<button
 					type="button"
 					data-target="dropdown-default"
-					className="dropdown-toggle inline-flex justify-center py-2.5 px-1 items-center gap-2 text-sm text-black rounded-full cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 hover:text-purple-600  "
+					className="dropdown-toggle inline-flex justify-center hover:bg-muted w-7 h-7 items-center text-foreground rounded-full transition-all"
 				>
 					<DotsVerticalIcon />
 				</button>

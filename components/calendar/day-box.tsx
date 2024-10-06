@@ -8,7 +8,7 @@ interface DayBoxProps {
 }
 
 const DayBox = ({ day }: DayBoxProps) => {
-	const { setSelectedDate, selectedDate, currentMonth } = useStore();
+	const { setSelectedDate, selectedDate, currentMonth, schedules } = useStore();
 
 	return (
 		<button
@@ -22,7 +22,7 @@ const DayBox = ({ day }: DayBoxProps) => {
 		>
 			<time
 				dateTime={format(day, "yyyy-MM-dd")}
-				className={`text-xs sm:text-base text-center w-full font-semibold ${
+				className={`text-sm sm:text-lg text-center flex flex-col gap-1 items-center w-full font-semibold max-sm:font-medium ${
 					!isSameMonth(day, currentMonth)
 						? "text-foreground/40"
 						: isToday(day)
@@ -32,7 +32,17 @@ const DayBox = ({ day }: DayBoxProps) => {
 						: "text-foreground"
 				} `}
 			>
-				{format(day, "d")}
+				<span
+					className={cn(
+						schedules.some((s) => isSameDay(s.datetime, day)) &&
+							(isSameDay(selectedDate, day)
+								? "border border-background"
+								: "border-red-500 border"),
+						"rounded-full grid place-content-center w-8 h-8 cursor-pointer"
+					)}
+				>
+					{format(day, "d")}
+				</span>
 			</time>
 		</button>
 	);

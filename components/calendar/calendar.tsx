@@ -43,10 +43,10 @@ const Calendar = () => {
 	};
 
 	return (
-		<div className=" stick top-0  col-span-12 xl:col-span-7 px-2.5 py-2 sm:p-8 bg-gradient-to-b from-white/25 to-white xl:bg-white rounded-2xl max-xl:row-start-1">
+		<div className=" stick top-0  col-span-12 xl:col-span-7 px-2.5 py-2 sm:p-8 bg-gray-300/20 backdrop-blur-sm dark:bg-secondary/40 shadow-md rounded-2xl max-xl:row-start-1">
 			<div className="flex flex-col md:flex-row gap-4 items-center justify-between mb-5">
 				<div className="flex items-center gap-4">
-					<h5 className="text-xl sm:text-3xl leading-8 tracking-wide font-bold text-gray-900">
+					<h5 className="text-xl sm:text-3xl leading-8 tracking-wide font-bold text-foreground/90">
 						{format(currentMonth, "MMMM-yyyy")}
 					</h5>
 					<div className="flex items-center gap-1">
