@@ -10,7 +10,7 @@ export const getInitialUser = async () => {
 
   if (dbUser.rows.length > 0) return dbUser.rows[0];
 
-  const fullname = user.firstName + " " + user.lastName ?? " ";
+  const fullname = user.firstName + " " + user.lastName;
   const email = user.emailAddresses[0].emailAddress
   const clerkId = user.id
 

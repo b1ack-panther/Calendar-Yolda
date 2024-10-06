@@ -29,7 +29,7 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 
 const SignUpForm = () => {
-	const [message, setMessage] = useState<SqlMessage>();
+	const [message, setMessage] = useState<SqlResponse>();
 	const { isLoaded, signUp, setActive } = useSignUp();
 	const router = useRouter();
 	const form = useForm<verifyCodeData>({
