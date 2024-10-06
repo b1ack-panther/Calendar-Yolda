@@ -30,7 +30,7 @@ const SignUpForm = ({
 }: {
 	setVerifying: Dispatch<SetStateAction<boolean>>;
 }) => {
-	const [message, setMessage] = useState<SqlMessage>();
+	const [message, setMessage] = useState<SqlResponse>();
 	const { signUp, isLoaded } = useSignUp();
 
 	const form = useForm<registerFormData>({
@@ -83,7 +83,7 @@ const SignUpForm = ({
 
 	return (
 		<Form {...form}>
-			<form onSubmit={form.handleSubmit(handleSubmit)}>
+			<form onSubmit={form.handleSubmit(handleSubmit)} autoComplete="off">
 				<CardHeader className="text-center">
 					<CardTitle className="text-3xl font-bold">Register</CardTitle>
 					<CardDescription>Enter your details</CardDescription>
@@ -97,7 +97,11 @@ const SignUpForm = ({
 							<FormItem>
 								<FormLabel>Name</FormLabel>
 								<FormControl>
-									<Input placeholder="Your Fullname" {...field} />
+									<Input
+										autoComplete="disable"
+										placeholder="Your Fullname"
+										{...field}
+									/>
 								</FormControl>
 								<FormMessage />
 							</FormItem>

@@ -71,7 +71,7 @@ const SignUpForm = () => {
 
 	return (
 		<Form {...form}>
-			<form onSubmit={form.handleSubmit(handleVerify)}>
+			<form onSubmit={form.handleSubmit(handleVerify)} autoComplete="off">
 				<CardHeader className="text-center">
 					<CardTitle className="text-3xl font-bold">Register</CardTitle>
 					<CardDescription>Verify Your Email</CardDescription>

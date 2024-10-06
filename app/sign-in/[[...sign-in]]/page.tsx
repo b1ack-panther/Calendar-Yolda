@@ -31,7 +31,7 @@ import { isClerkAPIResponseError } from "@clerk/nextjs/errors";
 
 const LoginPage = () => {
 	const { isLoaded, signIn, setActive } = useSignIn();
-	const [message, setMessage] = useState<SqlMessage | undefined>();
+	const [message, setMessage] = useState<SqlResponse | undefined>();
 	const router = useRouter();
 	const form = useForm<loginFormData>({
 		resolver: zodResolver(loginFormSchema),
@@ -79,7 +79,7 @@ const LoginPage = () => {
 		<div className="flex items-center justify-center min-h-screen w-full">
 			<Card className="w-full max-w-md">
 				<Form {...form}>
-					<form onSubmit={form.handleSubmit(handleSubmit)}>
+					<form onSubmit={form.handleSubmit(handleSubmit)} autoComplete="off">
 						<CardHeader className="text-center">
 							<CardTitle className="text-3xl font-bold">Login</CardTitle>
 							<CardDescription>Enter your Account details here</CardDescription>

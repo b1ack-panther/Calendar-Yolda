@@ -36,9 +36,10 @@ type Schedule = {
 };
 
 type User = {
-	id: number;
-	name: string;
+  id: number;
+  clerkId: string;
+	fullname: string;
 	email: string;
 };
 
-type SqlMessage = { error: string } | { success: string };
+type SqlResponse = { error: string } | { success: string }
