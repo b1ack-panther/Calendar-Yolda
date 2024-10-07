@@ -1,1 +1,1 @@
-live link: https://vercel.live/link/calendar-yolda.vercel.app
+live link: https://calendar-yolda.vercel.app
